@@ -64,6 +64,9 @@
 
     <div class="row">
       <h2>page layout is {{ page.layout }}</h2>
+      {% if page.layout == 'post'}
+        <h3>this is a post</h3>
+      {% endif %}
     </div>
 
   </div>
