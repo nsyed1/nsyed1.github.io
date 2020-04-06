@@ -64,11 +64,9 @@
 
     <div class="row">
       <h2>page layout is {{ page.layout }}</h2>
-      <h2>posts are {{posts}}</h2>
 
       {% if page.layout != 'home'}
-        {% assign posts=site.posts | where:"lang-ref", page.lang-ref | sort: 'lang' %}
-        <h2>posts are {{posts}}</h2>
+      <h2>not at home layut is {{ page.layout }}</h2>
       {% endif %}
 
     </div>
