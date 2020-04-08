@@ -4,7 +4,16 @@ title: Posts
 background: '/img/bg-post.jpg'
 ---
 <h2> french posts go here</h2>
-{% for post in site.posts %}
+<ul>
+  {% for post in site.posts %}
+  <li>
+    <a href="{{ post.url }}">{{ post.title }}</a>
+  </li>
+  {% endfor %}
+</ul>
+
+
+{% for post in paginator.posts %}
 <!-- only show english posts on post page -->
 {% if post.lang == 'fr' %}
 
