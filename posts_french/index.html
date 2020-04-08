@@ -13,7 +13,7 @@ background: '/img/bg-post.jpg'
 </ul>
 
 
-{% for post in paginator.posts %}
+{% for post in site.posts %}
 <!-- only show english posts on post page -->
 {% if post.lang == 'fr' %}
 
