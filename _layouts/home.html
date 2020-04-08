@@ -31,6 +31,9 @@ layout: default
 
         <!-- Home Post List -->
         {% for post in site.posts limit : 5 %}
+        {% if post.lang == 'fr' %}
+          <h2>french french french</h2>
+        {% endif %}
 
         <article class="post-preview">
           <!-- <a href="{{ post.url | prepend: site.baseurl | replace: '//', '/' }}"> -->
