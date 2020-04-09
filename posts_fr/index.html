@@ -5,7 +5,7 @@ background: '/img/bg-post.jpg'
 ---
 
 {% for post in site.posts %}
-<!-- only show english posts on post page -->
+<!-- only show french posts on post page -->
 {% if post.lang == 'fr' %}
 
 <article class="post-preview">
@@ -30,7 +30,7 @@ background: '/img/bg-post.jpg'
 <hr>
 
 {% endif %}
-<!-- endif post.lang == 'en' -->
+<!-- endif post.lang == 'fr' -->
 
 {% endfor %}
 
