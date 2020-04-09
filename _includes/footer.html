@@ -62,32 +62,7 @@
       </div>
     </div>
 
-    {% if page.layout == 'post' %}
-    {% assign posts=site.posts | where:"lang-ref", page.lang-ref | sort: 'lang' %}
-    {% if posts.size == 0 %}
-    {% assign posts=site.pages | where:"lang-ref", page.lang-ref | sort: 'lang' %}
-    {% endif %}
-    {% if posts.size > 1 %}
-    <div class="row lang-options">
-      <h2>
-        {% if page.lang == 'fr' %}
-        Read in English
-        {% elsif page.lang == 'en' %}
-        Lire en Français
-        {% endif %}
-      </h2>
-      <em>Read this page in a different language:</em>
-      <ul>
-        {% for post in posts %}
-        {% if page.lang != post.lang %}
-        <li><a href="{{ site.base-url }}{{ post.url }}" class="{{ post.lang }} title=" View in
-            {{post.lang}}">{{ post.lang }}</a></li>
-        {% endif %}
-        {% endfor %}
-      </ul>
-    </div>
-    {% endif %}
-    {% endif %}
+    {% include translate.html %}
 
   </div>
 </footer>
