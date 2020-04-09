@@ -29,13 +29,13 @@
     {% if page.lang != post.lang %}
     <button
         style="background-color: Transparent; background-repeat: no-repeat; cursor: pointer; overflow: hidden; outline: none; margin-top: 30px; padding: 10px; border-radius: 10px;"">
-        <a href=" {{ site.base-url }}{{ post.url }}" class="{{ post.lang }} title=" View in {{post.lang}}">
+        <em><a href=" {{ site.base-url }}{{ post.url }}" class="{{ post.lang }} title=" View in {{post.lang}}">
         {% if page.lang == 'fr' %}
-        Read in English
+        Lire en Anglais
         {% elsif page.lang == 'en' %}
-        Lire en Français
+        Read in French
         {% endif %}
-        </a></button>
+        </a></em></button>
     {% endif %}
     {% endfor %}
 </span>
