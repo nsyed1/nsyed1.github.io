@@ -69,7 +69,13 @@
     {% endif %}
     {% if posts.size > 1 %}
     <div class="row lang-options">
-      <h2>Currently in {{ page.lang }}</h2>
+      <h2>
+        {% if page.lang == 'fr' %}
+        Read in English
+        {% elseif page.lang == 'en' %}
+        Lire en Français
+        {% endif %}
+      </h2>
       <em>Read this page in a different language:</em>
       <ul>
         {% for post in posts %}
