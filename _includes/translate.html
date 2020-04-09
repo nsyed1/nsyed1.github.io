@@ -27,13 +27,15 @@
 <span class="meta">
     {% for post in posts %}
     {% if page.lang != post.lang %}
-    <li><a href="{{ site.base-url }}{{ post.url }}" class="{{ post.lang }} title=" View in {{post.lang}}">
-            {% if page.lang == 'fr' %}
-            Read in English
-            {% elsif page.lang == 'en' %}
-            Lire en Français
-            {% endif %}
-        </a></li>
+    <button
+        style="background-color: Transparent; background-repeat: no-repeat; cursor: pointer; overflow: hidden; outline: none; margin-top: 30px; padding: 10px; border-radius: 10px;"">
+        <a href=" {{ site.base-url }}{{ post.url }}" class="{{ post.lang }} title=" View in {{post.lang}}">
+        {% if page.lang == 'fr' %}
+        Read in English
+        {% elsif page.lang == 'en' %}
+        Lire en Français
+        {% endif %}
+        </a></button>
     {% endif %}
     {% endfor %}
 </span>
