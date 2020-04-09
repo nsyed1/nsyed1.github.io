@@ -63,20 +63,22 @@
     </div>
 
     {% if page.layout == 'post' %}
-      {% assign posts=site.posts | where:"lang-ref", page.lang-ref | sort: 'lang' %}
-      {% if posts.size == 0 %}
-        {% assign posts=site.pages | where:"lang-ref", page.lang-ref | sort: 'lang' %}
-      {% endif %}
-      {% if posts.size > 1 %}
-      <div class="row lang-options">
-        <em>Read this page in a different language:</em>
-        <ul>
+    {% assign posts=site.posts | where:"lang-ref", page.lang-ref | sort: 'lang' %}
+    {% if posts.size == 0 %}
+    {% assign posts=site.pages | where:"lang-ref", page.lang-ref | sort: 'lang' %}
+    {% endif %}
+    {% if posts.size > 1 %}
+    <div class="row lang-options">
+      <h2>Currently in {{ page.lang }}</h2>
+      <em>Read this page in a different language:</em>
+      <ul>
         {% for post in posts %}
-        <li><a href="{{ site.base-url }}{{ post.url }}" class="{{ post.lang }} title="View in {{post.lang}}">{{ post.lang }}</a></li>
+        <li><a href="{{ site.base-url }}{{ post.url }}" class="{{ post.lang }} title=" View in
+            {{post.lang}}">{{ post.lang }}</a></li>
         {% endfor %}
-        </ul>
-      </div>
-      {% endif %}
+      </ul>
+    </div>
+    {% endif %}
     {% endif %}
 
   </div>
